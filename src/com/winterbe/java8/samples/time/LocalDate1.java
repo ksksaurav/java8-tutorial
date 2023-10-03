@@ -18,13 +18,13 @@ public class LocalDate1 {
         LocalDate tomorrow = today.plus(1, ChronoUnit.DAYS);
         LocalDate yesterday = tomorrow.minusDays(2);
 
-        System.out.println(today);
-        System.out.println(tomorrow);
-        System.out.println(yesterday);
+        System.out.println("Today is " + today);
+        System.out.println("Tomorrow is "+ tomorrow);
+        System.out.println("Yesterday iis " + yesterday);
 
         LocalDate independenceDay = LocalDate.of(2014, Month.JULY, 4);
         DayOfWeek dayOfWeek = independenceDay.getDayOfWeek();
-        System.out.println(dayOfWeek);    // FRIDAY
+        System.out.println("Day of week " + independenceDay +" is " + dayOfWeek);    // FRIDAY
 
         DateTimeFormatter germanFormatter =
                 DateTimeFormatter
