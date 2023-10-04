@@ -18,6 +18,7 @@ public class LocalDateTime1 {
 
         LocalDateTime sylvester = LocalDateTime.of(2014, Month.DECEMBER, 31, 23, 59, 59);
 
+
         DayOfWeek dayOfWeek = sylvester.getDayOfWeek();
         System.out.println(dayOfWeek);      // WEDNESDAY
 
@@ -25,6 +26,7 @@ public class LocalDateTime1 {
         System.out.println(month);          // DECEMBER
 
         long minuteOfDay = sylvester.getLong(ChronoField.MINUTE_OF_DAY);
+        sylvester.getLong(ChronoField.MINUTE_OF_DAY);
         System.out.println(minuteOfDay);    // 1439
 
         Instant instant = sylvester
