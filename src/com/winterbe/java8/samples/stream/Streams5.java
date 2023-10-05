@@ -13,17 +13,19 @@ import java.util.stream.Stream;
 public class Streams5 {
 
     public static void main(String[] args) {
-        List<String> strings =
-            Arrays.asList("d2", "a2", "b1", "b3", "c");
 
-//        test1(strings);
+        List<String> strings = Arrays.asList("d2", "a2", "b1", "b3", "c");
+//        List<String> strings =
+//            Arrays.asList("d2", "a2", "b1", "b3", "c");
+
+       // test1(strings);
 //        test2(strings);
-//        test3(strings);
+        test3(strings);
 //        test4(strings);
 //        test5(strings);
 //        test6(strings);
 //        test7(strings);
-        test8(strings);
+ //       test8(strings);
     }
 
     private static void test8(List<String> stringCollection) {
@@ -113,26 +115,46 @@ public class Streams5 {
 
     private static void test2(List<String> stringCollection) {
         stringCollection
-            .stream()
-            .map(s -> {
-                System.out.println("map:     " + s);
-                return s.toUpperCase();
-            })
-            .filter(s -> {
-                System.out.println("filter:  " + s);
-                return s.startsWith("A");
-            })
-            .forEach(s -> System.out.println("forEach: " + s));
+                .stream()
+                        .map(s -> {
+                            System.out.println("Map :  "+ s);
+                            return s.toUpperCase();
+                        })
+                                .filter(s->{
+                                    System.out.println("Filter is : "+ s);
+                                    return  s.startsWith("A");
+                                })
+                                        .forEach(s -> System.out.println("ForEach : "+s));
+
+
+//        stringCollection
+//            .stream()
+//            .map(s -> {
+//                System.out.println("map:     " + s);
+//                return s.toUpperCase();
+//            })
+//            .filter(s -> {
+//                System.out.println("filter:  " + s);
+//                return s.startsWith("A");
+//            })
+//            .forEach(s -> System.out.println("forEach: " + s));
     }
 
     private static void test1(List<String> stringCollection) {
         stringCollection
-            .stream()
-            .filter(s -> {
-                System.out.println("filter:  " + s);
-                return true;
-            })
-            .forEach(s -> System.out.println("forEach: " + s));
+                .stream()
+                        .filter(s->{
+                            //System.out.println("filter : "+ s);
+                            return true;
+                        })
+                                .forEach(s-> System.out.println("ForEach : "+ s));
+//        stringCollection
+//            .stream()
+//            .filter(s -> {
+//                System.out.println("filter:  " + s);
+//                return true;
+//            })
+//            .forEach(s -> System.out.println("forEach: " + s));
     }
 
 }
