@@ -28,7 +28,7 @@ public class Streams7 {
 
     public static void main(String[] args) {
 //        test1();
-        test2();
+//        test2();
     }
 
     static void test2() {
@@ -42,11 +42,16 @@ public class Streams7 {
     }
 
     static void test1() {
-        List<Foo> foos = new ArrayList<>();
+//        List<Foo> foos = new ArrayList<>();
+        ArrayList<Foo> foos = new ArrayList<>();
 
         IntStream
-            .range(1, 4)
-            .forEach(num -> foos.add(new Foo("Foo" + num)));
+                .range(1,4)
+                        .forEach(num -> foos.add(new Foo("Foo"+num)));
+
+//        IntStream
+//            .range(1, 4)
+//            .forEach(num -> foos.add(new Foo("Foo" + num)));
 
         foos.forEach(f ->
             IntStream
