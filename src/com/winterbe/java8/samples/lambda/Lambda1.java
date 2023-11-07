@@ -12,38 +12,52 @@ import java.util.Optional;
 public class Lambda1 {
 
     public static void main(String[] args) {
-        List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
 
-        Collections.sort(names, new Comparator<String>() {
-            @Override
-            public int compare(String a, String b) {
-                return b.compareTo(a);
-            }
+          List<String> names = Arrays.asList("peter", "anna", "mike", "xenia");
+
+          Collections.sort(names, new Comparator<String>() {
+              @Override
+              public int compare(String o1, String o2) {
+                  return o1.compareTo(o2);
+              }
+          });
+
+        names.forEach(System.out::println);
+
+        Collections.sort(names, (String s1, String s2) -> {
+            return s1.compareTo(s2);
         });
 
-        Collections.sort(names, (String a, String b) -> {
-            return b.compareTo(a);
-        });
+        names.forEach(System.out::println);
 
-        Collections.sort(names, (String a, String b) -> b.compareTo(a));
+        Collections.sort(names, (String s1, String s2) ->  s1.compareTo(s2));
 
-        Collections.sort(names, (a, b) -> b.compareTo(a));
+        names.forEach(System.out::println);
 
-        System.out.println(names);
+        Collections.sort(names, ( s1,  s2) ->  s1.compareTo(s2));
+
+        names.forEach(System.out::println);
 
         names.sort(Collections.reverseOrder());
 
-        System.out.println(names);
+        names.forEach(System.out::println);
 
-        List<String> names2 = Arrays.asList("peter", null, "anna", "mike", "xenia");
-        names2.sort(Comparator.nullsLast(String::compareTo));
-        System.out.println(names2);
+          List<String> names2 = Arrays.asList("peter", null, "anna", "mike", "xenia");
 
-        List<String> names3 = null;
+          names2.sort(Comparator.nullsLast(String::compareTo));
+        names2.forEach(System.out::println);
 
-        Optional.ofNullable(names3).ifPresent(list -> list.sort(Comparator.naturalOrder()));
+         List<String> names3 = null;
+
+         Optional.of(names3).ifPresent(list -> list.sort(Comparator.naturalOrder()));
 
         System.out.println(names3);
+//
+//        List<String> names3 = null;
+//
+//        Optional.ofNullable(names3).ifPresent(list -> list.sort(Comparator.naturalOrder()));
+//
+//        System.out.println(names3);
     }
 
 }
